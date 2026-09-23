@@ -1,0 +1,91 @@
+% Pacotes Fundamentais, favor não alterar nada
+
+% Configuração das margens
+\usepackage[inner = 3cm, outer = 2cm, top = 3cm, bottom= 2cm]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{hyphenat}
+
+% Configuração dos parágrafos
+\usepackage{indentfirst}
+\setlength{\parindent}{1.25cm}
+
+% Configuração do espaçamento
+\usepackage{setspace}
+
+% Configuração de alinhamento de texto
+\usepackage{ragged2e}
+
+% Configuração de numeração de página
+\usepackage{fancyhdr}
+\fancyhf{}
+\rhead{\thepage}
+\cfoot{}
+\renewcommand{\headrulewidth}{0pt} % zera linha de cabeçalho
+\pagestyle{fancy}
+\setlength{\headheight}{15pt}
+
+% Configuração da Fonte
+\usepackage{times} % Fonte: Times New Roman 
+%\usepackage{fontspec} % Pacote de Fontes
+%\setmainfont{Arial} % Arial - use o compilador XeLaTeX ou LuaLaTeX
+
+\usepackage[hang,flushmargin]{footmisc} % tirar o espaçamento da nota de rodapé
+
+\usepackage{xcolor}
+
+\makeatletter % para primeiras notas de rodapé
+\def\@xfootnote[#1]{%
+  \protected@xdef\@thefnmark{#1}%
+  \@footnotemark\@footnotetext}
+\makeatother
+
+% Formatando Sections
+\usepackage{mfirstuc}
+
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\fontsize{12}{12}\bfseries\MakeUppercase}{\thesection}{0.5em}{}
+
+\titleformat{\subsection}{\normalfont\fontsize{12}{12}\bfseries}{\thesubsection}{0.5em}{\capitalisewords}
+
+\titleformat{\subsubsection}{\normalfont\fontsize{12}{12}\bfseries\itshape}{\thesubsubsection}{0.5em}{\capitalisewords}
+
+
+%PACOTE DE CITAÇÕES
+\usepackage[alf]{abntex2cite}
+
+% Redefinindo a formatação para usar negrito em vez de itálico
+\renewcommand{\emph}[1]{\textbf{#1}}
+
+% Personalização do título das referências
+\renewcommand{\refname}{Referências}
+
+% Redefinindo formatação apenas para primeira letra em maiúscula
+\newcommand{\ncite}[2][]{(\citeauthoronline{#2}, \citeyear{#2}\ifx&#1&\else, p. #1\fi)}
+
+\usepackage{changepage}
+\usepackage{ifoddpage}
+
+% Definir ambiente quote para citações diretas com mais de 3 linhas
+\newenvironment{myquote}{\par\fontsize{10pt}{12pt}\selectfont\begin{adjustwidth}{4cm}{0pt}}{\end{adjustwidth}\par}
+
+% PACOTES ESSENCIAIS
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{xurl}
+
+% Define o tamanho da fonte para as legendas
+\DeclareCaptionFont{mycaptionfont}{\fontsize{10pt}{12pt}\selectfont}
+
+% Aplica o tamanho da fonte definido às legendas de figuras
+\captionsetup{font=mycaptionfont}
+
+% Redefine o separador das legendas para travessão (-)
+\DeclareCaptionLabelSeparator{myhyphen}{ --- }
+\captionsetup{font=mycaptionfont, labelsep=myhyphen}
+
+% Define o espaçamento horizontal da nota de rodapé
+\setlength{\footnotemargin}{10pt}

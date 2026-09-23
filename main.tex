@@ -1,0 +1,63 @@
+
+\documentclass[oneside, 12pt, a4paper]{article}
+\input{config/pacotes} % Não apague essa linha
+
+% Preencha as informações do título, subtítulo, autor e orientador aqui
+\newcommand{\titulo}{Analise de pontência de sinal Wi-Fi usando mapa de calor em resisdencia}
+\newcommand{\disciplina}{DEC7563-07655 - Redes sem Fios}
+\newcommand{\autor}{
+    André Tavares Pinheiro\\
+    Arthur Rodrigues Fernandes\\
+    Cassiano Matias Luzzietti\\
+    Yuri Martins Alegre\\
+}
+
+
+\newcommand{\professor}{Frederico Schardong, Dr}
+
+% Inclua os pacotes necessários nas linhas abaixo
+\usepackage{amsfonts,amsmath,amssymb}
+
+\begin{document}
+\singlespacing % espaçamento simples
+\justifying % texto justificado
+
+\input{elementos_do_texto/capa} % Insere os títulos e subtítulos
+
+%%%%%%%%%%%%%%%%%%%%% RESUMO E ABSTRACT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{flushright}
+
+    \par \autor\
+    
+\end{flushright}
+\begin{center}
+
+    \par \textbf{\MakeUppercase{Resumo}}
+    
+\end{center}
+
+\input{input/resume}
+
+\section{Introdução}
+\input{input/introducao}
+
+\section{Fundamentação}
+\label{sec:Fundamention}
+\input{input/fundametation}
+
+\section{Metodologia}
+\input{input/metodologia}
+
+\section{Resultados e Discussão}
+\input{input/resultados}
+
+\section{Conclusão}
+\input{input/conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% REFERÊNCIAS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\nocite{tanenbaum2021computer}
+\nocite{rocholsistemas}
+\input{elementos_do_texto/refbibliografia}
+
+
+\end{document}
